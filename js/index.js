@@ -35,6 +35,7 @@ function changeLang(){
     }
 }
 changeLang();
+//light mode
 lightModeModule({
     buttonSelector: '#themeButton',
     startMode: false
