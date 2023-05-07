@@ -1,0 +1,48 @@
+//skills
+.skills{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    &__label{
+        position: relative;
+        font-size:2rem;
+        font-weight: 300;
+        &:hover::before{
+            opacity:1;
+            transform:scale(1);
+        }
+        &::before{
+            content:"";
+            position: absolute;
+            left:0;
+            border-bottom: 2px solid var(--text-color);
+            
+            opacity: 0;
+            transform: scale(0,1);
+            transition: all 0.3s ease 0s;
+            height:100%;
+            width:100%;
+        }
+    }
+    &__items{
+        display:flex;
+        width:100%;
+        justify-content: space-between;
+        gap:8px;
+        p{
+            font-size:20px;
+            position: relative;
+            &:after{
+                position: absolute;
+                left:calc(50% - 8px);
+                bottom:32px;
+                content:'';
+                height:50px;
+                background-color: var(--text-color);
+                width:16px;
+            }
+        }
+    }
+}
