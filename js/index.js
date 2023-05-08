@@ -9,15 +9,18 @@ let lang = window.location.hash.substring(1);
 langButton.addEventListener('click', toggleLang);
 function toggleLang(){
     if(lang=="ua"){
+        lang="us";
         changeURLlang("us");
     }
     else{
+        lang="ua";
         changeURLlang("ua");
     }
+    changeLang()
 }
 function changeURLlang(langName){
     location.href = window.location.pathname + `#${langName}`;
-    location.reload();
+    //location.reload();
 }
 function changeLang(){
     if(!allLang.includes(lang)){
@@ -41,7 +44,7 @@ lightModeModule({
     startMode: false
 });
 
-
+//block click handler
 const click = document.querySelectorAll('.grid-item');
 const content = document.querySelector('.content');
 const clone = document.querySelector('.clone');
@@ -126,4 +129,11 @@ window.addEventListener('mouseup', (e)=>{
         interacting = interactable !== null;
     animateCursor(e, interactable,100, cursorDot);
     animateCursor(e, interactable,200, cursorCircle);
+});
+//skills icon fill
+const skillsIcons = document.querySelectorAll('.skills__icon');
+skillsIcons.forEach(icon =>{
+    const percentage = icon.getAttribute("data-percent");
+    console.log(percentage);
+    icon.style.background = `linear-gradient(to top ,var(--accent-color),var(--accent-color) ${percentage},var(--sklz-bg-color)  ${percentage}, var(--sklz-bg-color))`;
 });

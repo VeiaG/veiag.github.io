@@ -35,6 +35,23 @@
         p{
             font-size:1.5rem;
             position: relative;
+            cursor:default;
+            height:2rem;
+            &:hover::before{
+                opacity:1;
+                transform:scale(1);
+            }
+            &::before{
+                content:"";
+                position: absolute;
+                left:0;
+                border-bottom: 2px solid var(--text-color);
+                opacity: 0;
+                transform: scale(0,1);
+                transition: all 0.3s ease 0s;
+                height:100%;
+                width:100%;
+            }
         }
     }
     &__item{
@@ -65,7 +82,9 @@
         height:3rem;
         aspect-ratio: 1;
         mask-size: cover;
-        background-color: var(--text-color); 
-        
+        transition: all 0.3s ease 0s;
+        &:hover{
+            transform:scale(1.2);
+        }
     }
 }
