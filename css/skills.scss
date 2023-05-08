@@ -26,23 +26,46 @@
             width:100%;
         }
     }
-    &__items{
-        display:flex;
+    &__items{ 
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
         width:100%;
-        justify-content: space-between;
-        gap:8px;
+        height:70%;
+        gap:4px;
         p{
-            font-size:20px;
+            font-size:1.5rem;
             position: relative;
-            &:after{
-                position: absolute;
-                left:calc(50% - 8px);
-                bottom:32px;
-                content:'';
-                height:50px;
-                background-color: var(--text-color);
-                width:16px;
-            }
         }
+    }
+    &__item{
+        display:flex;
+        flex-direction: row;
+        gap:0.5rem;
+        &:nth-of-type(1) .skills__icon{
+            mask-image:url(../img/icons/html.svg);
+        }
+        &:nth-of-type(2) .skills__icon{
+            mask-image:url(../img/icons/css.svg);
+        }
+        &:nth-of-type(3) .skills__icon{
+            mask-image:url(../img/icons/js.svg);
+        }
+        &:nth-of-type(4) .skills__icon{
+            mask-image:url(../img/icons/ts.svg);
+        }
+        &:nth-of-type(5) .skills__icon{
+            mask-image:url(../img/icons/react.svg);
+        }
+        &:nth-of-type(6) .skills__icon{
+            mask-image:url(../img/icons/figma.svg);
+        }
+    }
+
+    &__icon{
+        height:3rem;
+        aspect-ratio: 1;
+        mask-size: cover;
+        background-color: var(--text-color); 
+        
     }
 }
