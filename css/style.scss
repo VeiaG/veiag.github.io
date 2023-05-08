@@ -15,6 +15,9 @@ body{
     }
     user-select: none;
 }
+img{
+    pointer-events: none;
+}
 .clone{
     display: none;
     z-index:20;
@@ -196,13 +199,21 @@ $gap : 1rem;
 
 #blob {
     pointer-events: none;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index:1;
+}
+#blob-image{
+    pointer-events: none;
     background-color: white;
     height: 34vmax;
     aspect-ratio: 1;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
+    left: 0;
+    top: 0;
     border-radius: 50%;
     background: linear-gradient(to right, aquamarine, mediumpurple);
     animation: rotate 20s infinite;
@@ -219,12 +230,12 @@ $gap : 1rem;
 }
 @keyframes rotate {
     from {
-        rotate: 0deg;
+        transform:rotate(0deg); 
     }
     50% {
         scale: 1 1.5;
     }
     to {
-        rotate: 360deg;
+        transform:rotate(360deg);
     }
 }

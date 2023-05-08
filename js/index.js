@@ -72,14 +72,12 @@ click.forEach(element => {
 let isClicked = false;
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorCircle = document.querySelector('.cursor-circle');
-function animateCursor(e, interacting, time , cursorElement) {
-    const x = e.clientX ,
-          y = e.clientY
+function animateCursor(clientX,clientY, interacting, time , cursorElement) {
     const keyframes = {
-      top: `${y}px`,
-      left: `${x}px`,
+      //top: `${clientY}px`,
+      //left: `${clientX}px`,
       opacity: (cursorElement == cursorCircle) ? isClicked ? 0 : interacting ? 0 : 1 : 1,
-      transform: (cursorElement != cursorCircle) ? `${interacting? 'translate(220%,220%)' : 'translate(-50%,-50%)'} scale(${ isClicked ? interacting ? 5.5 : 2.5 : interacting ? 5 : 1})` : `${interacting? 'translate(0%,0%)' : 'translate(-50%,-50%)'}`
+      transform: (cursorElement != cursorCircle) ? `${interacting? `translate(calc(${clientX}px + 220%),calc(${clientY}px + 220%))` : `translate(calc(${clientX}px - 50%),calc(${clientY}px - 50%))`} scale(${ isClicked ? interacting ? 5.5 : 2.5 : interacting ? 5 : 1})` : `${interacting? `translate(${clientX}px,${clientY}px)` : `translate(calc(${clientX}px - 50%),calc(${clientY}px - 50%))`}`
     }
     
     cursorElement.animate(keyframes, { 
@@ -88,18 +86,18 @@ function animateCursor(e, interacting, time , cursorElement) {
     });
   }
 const blob = document.getElementById("blob");
-
+const blobRect = blob.getBoundingClientRect();
 window.addEventListener("mousemove", (e)=>{
     const interactable = e.target.closest(".interactable"),
         interacting = interactable !== null;
-    animateCursor(e, interacting,800, cursorDot);
-    animateCursor(e, interacting,1000, cursorCircle);
     const { clientX, clientY } = e;
-
+    animateCursor(clientX,clientY, interacting,500, cursorDot);
+    animateCursor(clientX,clientY, interacting,700, cursorCircle);
+    
     blob.animate({
-        left: `${clientX}px`,
-        top: `${clientY}px`
-        }, { duration: 5000, fill: "forwards" });
+        transform: `translateX(${clientX-blobRect.width/2}px) translateY(${clientY-blobRect.height/2}px)`,
+        }, 
+        { duration: 5000, fill: "forwards" });
     if(interacting){
         cursorDot.classList.add('active');
     }
@@ -107,33 +105,31 @@ window.addEventListener("mousemove", (e)=>{
         cursorDot.classList.remove('active');
     }
 
-
     click.forEach(item =>{
-        const rect = item.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top;
-        item.style.setProperty("--mouse-x", `${x}px`);
-        item.style.setProperty("--mouse-y", `${y}px`);
+        const rect = item.getBoundingClientRect();
+        item.style.setProperty("--mouse-x", `${clientX-rect.left}px`);
+        item.style.setProperty("--mouse-y", `${clientY-rect.top}px`);
     });
 });
 window.addEventListener('mousedown', (e)=>{
     isClicked = true;
     const interactable = e.target.closest(".interactable"),
         interacting = interactable !== null;
-    animateCursor(e, interactable,100, cursorDot);
-    animateCursor(e, interactable,200, cursorCircle);
+    const { clientX, clientY } = e;
+    animateCursor(clientX,clientY, interactable,100, cursorDot);
+    animateCursor(clientX,clientY, interactable,200, cursorCircle);
 });
 window.addEventListener('mouseup', (e)=>{
     isClicked = false;
     const interactable = e.target.closest(".interactable"),
         interacting = interactable !== null;
-    animateCursor(e, interactable,100, cursorDot);
-    animateCursor(e, interactable,200, cursorCircle);
+        const { clientX, clientY } = e;
+    animateCursor(clientX,clientY, interactable,100, cursorDot);
+    animateCursor(clientX,clientY, interactable,200, cursorCircle);
 });
 //skills icon fill
 const skillsIcons = document.querySelectorAll('.skills__icon');
 skillsIcons.forEach(icon =>{
     const percentage = icon.getAttribute("data-percent");
-    console.log(percentage);
     icon.style.background = `linear-gradient(to top ,var(--accent-color),var(--accent-color) ${percentage},var(--sklz-bg-color)  ${percentage}, var(--sklz-bg-color))`;
 });
