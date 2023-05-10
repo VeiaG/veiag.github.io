@@ -8,12 +8,16 @@ const langArr = {
         "us": "About"
     },
     "about-description":{
-        "ua": "Junior Front-end розробник-початківець",
-        "us": "Junior Front-end beginner developer"
+        "ua": "Junior Front-end розробник",
+        "us": "Junior Front-end developer"
     },
     "mySkills":{
         "ua": "Мої вміння",
         "us": "Skills"
+    },
+    "contact":{
+        "ua": "Контакти",
+        "us": "Contacts"
     }
 }
 export default langArr;

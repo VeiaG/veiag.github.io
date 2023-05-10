@@ -1,0 +1,50 @@
+* {
+    //border:1px solid red;
+}
+.contact {
+    display:flex;
+    height:100%;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    &__label{
+        position: relative;
+        font-size:2rem;
+        font-weight: 300;
+        &:hover::before{
+            opacity:1;
+            transform:scale(1);
+        }
+        &::before{
+            content:"";
+            position: absolute;
+            left:0;
+            border-bottom: 2px solid var(--text-color);
+            opacity: 0;
+            transform: scale(0,1);
+            transition: all 0.3s ease 0s;
+            height:100%;
+            width:100%;
+        }
+    }
+    a {
+        color:var(--text-color);
+        font-size:1.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease 0s;
+        &:hover{
+            transform:scale(1.05);
+        }
+        &:focus {
+            border:none;        
+        }
+      }
+    }
+#mail {
+    background-color: var(--sklz-bg-color);
+    height:4rem;
+    aspect-ratio: 1;
+    mask-image: url("../img/icons/envelope.svg");
+    mask-size: cover;
+}

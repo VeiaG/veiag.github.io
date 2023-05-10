@@ -132,4 +132,5 @@ const skillsIcons = document.querySelectorAll('.skills__icon');
 skillsIcons.forEach(icon =>{
     const percentage = icon.getAttribute("data-percent");
     icon.style.background = `linear-gradient(to top ,var(--accent-color),var(--accent-color) ${percentage},var(--sklz-bg-color)  ${percentage}, var(--sklz-bg-color))`;
+
 });
