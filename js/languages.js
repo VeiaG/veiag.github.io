@@ -18,6 +18,10 @@ const langArr = {
     "contact":{
         "ua": "Контакти",
         "us": "Contacts"
+    },
+    "myWork":{
+        "ua": "Мої роботи",
+        "us": "My work"
     }
 }
 export default langArr;

@@ -30,3 +30,4 @@ export default function lightModeModule({buttonSelector , light='light' , dark='
         setLightMode(!document.body.classList.contains(light));
     });
 }
+

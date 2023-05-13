@@ -1,0 +1,35 @@
+.links{
+    height:100%;
+    width:100%;
+    gap:1rem;
+    /*display: flex;
+    justify-content: center;
+    align-items: center; */
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    &__icon{
+        height:3.5rem;
+        aspect-ratio: 1;
+        mask-size: cover;
+        transition: all 0.3s ease 0s;
+        background: var(--text-color);
+        &:hover{
+            background:var(--accent-color);
+            transform: scale(1.05);
+        }
+    }
+    #i-github{
+        mask-image:url("../img/icons/github.svg");
+    }
+    #i-instagram{
+        mask-image:url("../img/icons/instagram.svg");
+    }
+    #i-linkedin{
+        mask-image:url("../img/icons/linkedin.svg");
+    }
+    #i-telegram{
+        mask-image:url("../img/icons/telegram.svg");
+    }
+}

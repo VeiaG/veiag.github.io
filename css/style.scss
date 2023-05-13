@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-@import "../css/variables";
-@import "../css/animations";
-@import "../css/about";
-@import "../css/skills";
-@import "../css/contacts";
+@import "variables";
+@import "animations";
+@import "about";
+@import "skills";
+@import "contacts";
+@import "links";
+@import "work";
 body{
     all:unset;
     overflow: hidden;
