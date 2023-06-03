@@ -49,3 +49,104 @@
     width:auto;
     mask-image:linear-gradient(to left ,black 40% , rgba(255, 255, 255, 0)95%);
 }
+@mixin fullscreen{
+    position: absolute;
+    top:0;
+    left:0;
+    //background: var(--foreground-color);
+    width:100vw;
+    height:100vh;
+    z-index:99;
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+    padding: 2rem 0px;
+    opacity:0;
+    &__menu{
+        height:3rem;
+        display:flex;
+        gap:8px;
+        justify-content: center;
+    }
+    &__menu-item{
+        min-width:128px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size:2rem;
+        padding:0 1rem;
+        transition: all 0.3s ease 0s;
+        &:hover{
+            transform:scale(1.05);
+        }
+    }
+    &__menu-item-active{
+        background:var(--disable-color);
+        color:var(--bg-color);
+    }
+    &__container{
+        //border: 1px solid rgb(60, 255, 0);
+        width:90%;
+        height:calc(100vh - 156px);
+        position: relative;
+        overflow:hidden;
+    }
+    &__carousel{
+        width:100%;
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        transition: all 0.3s ease 0s;
+    }
+    &__slide{
+        width:100%;
+        height:calc(100vh - 156px);
+        position: relative;
+        overflow:hidden;
+    }
+}
+.fullscreen-anim{
+    animation:fadeIn 400ms;
+    animation-delay:400ms;
+}
+@keyframes fadeIn {
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+//fullscreen
+.about-fullscreen{
+    @include fullscreen();
+}
+.work-fullscreen{
+    @include fullscreen();
+}
+.project-fullscreen{
+    @include fullscreen();
+}
+.ab1{
+    height:100%;
+    width:100%;
+    display:flex;
+    font-size:2rem;
+    padding:4rem 2rem;
+    &__text{
+        width:50%;
+        p{
+            text-indent: 3rem;
+        }
+    }
+}
+.ab2{
+    height:50%;
+    width:50%;
+    margin-inline:auto;
+    display:flex;
+    font-size:2rem;
+    text-align: center;
+    transform:translateY(50%);
+}

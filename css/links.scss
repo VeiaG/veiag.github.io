@@ -14,7 +14,7 @@
         aspect-ratio: 1;
         mask-size: cover;
         transition: all 0.3s ease 0s;
-        background: var(--text-color);
+        background: var(--disable-color);
         &:hover{
             background:var(--accent-color);
             transform: scale(1.05);

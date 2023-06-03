@@ -1,7 +1,11 @@
 "use strict"
 import '../css/style.scss';
 import langArr from './languages';
-import lightModeModule from './lightMode'
+import lightModeModule from './modules/lightMode';
+import fullscreenSlider from './modules/fullscreenSlides';
+fullscreenSlider("about-fullscreen");
+fullscreenSlider("work-fullscreen");
+fullscreenSlider("project-fullscreen");
 //language
 const allLang = ['ua','us'];
 const langButton = document.querySelector('#lang');
@@ -30,9 +34,13 @@ function changeLang(){
     langButton.innerHTML= lang.toUpperCase();
     document.querySelector('title').innerHTML = langArr["unit"][lang];
     for(let key in langArr){
-        let element = document.querySelector('.l-'+key);
-        if(element){
-            element.innerHTML = langArr[key][lang];
+        let elements = document.querySelectorAll('.l-'+key);
+        
+        if(elements){
+
+            elements.forEach(element =>{
+                element.innerHTML = langArr[key][lang];
+            });
         }
 
     }
@@ -57,13 +65,11 @@ click.forEach(element => {
                 clone.style.setProperty('--mw',bounds.width +'px');
                 clone.style.setProperty('--mh',bounds.height +'px');
                 clone.classList.add('reveal');
-                
-                clone.addEventListener('click', (e) => {
-                    e.target.classList.remove('reveal');
-                    e.target.classList.add('unreveal');
-                    e.target.addEventListener("animationend", (e)=>{
-                        e.target.classList.remove('unreveal');
-                    });
+                const link =document.querySelector(`.${ e.currentTarget.getAttribute("data-link")}`);
+                link.style.display= "flex";
+                link.classList.add('fullscreen-anim');
+                link.addEventListener("animationend", (e)=>{
+                    e.target.style.opacity=1;
                 });
             }
     });

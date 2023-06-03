@@ -38,3 +38,18 @@
         mix-blend-mode: difference;
     }
 }
+.phone-warning{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width:100vw;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    background: var(--bg-color);
+    @media (max-width: 1000px){
+          display:flex;
+    }
+}
