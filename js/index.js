@@ -54,6 +54,14 @@ lightModeModule({
 
 //block click handler
 const click = document.querySelectorAll('.grid-item');
+let borders = [];
+let foregrounds = [];
+click.forEach(item=>{
+    item.innerHTML+=`<div class="grid-item__border"></div>
+    <div class="grid-item__foreground"></div>`;
+    borders.push(item.querySelector(".grid-item__border"));
+    foregrounds.push(item.querySelector(".grid-item__foreground"));
+});
 const content = document.querySelector('.content');
 const clone = document.querySelector('.clone');
 click.forEach(element => {
@@ -110,11 +118,22 @@ window.addEventListener("mousemove", (e)=>{
     else{
         cursorDot.classList.remove('active');
     }
-
-    click.forEach(item =>{
+    /*
+        Ідея як це оптимізувати . 
+        для того щоб не викликався repaint кожен раз як ми робимо setProperty
+        Ідея така : Мати два елемента , які будуть нашими градієнтами 
+        ( хоч картинкою , але краще градієнтом)
+        Важливо щоб вони за розміром були як раз під градієнт . 
+        А далі ми будемо змінювати їх позицію через transform
+        Хоч це буде і для кожного елементу , але через використання transform
+        це буде робитись на гпу , і без перемальовування 
+    */
+    click.forEach((item,index)=>{
         const rect = item.getBoundingClientRect();
-        item.style.setProperty("--mouse-x", `${clientX-rect.left}px`);
-        item.style.setProperty("--mouse-y", `${clientY-rect.top}px`);
+        borders[index].style.transform = `translate(${clientX-rect.left -400}px ,${clientY-rect.top-400}px )`;
+        foregrounds[index].style.transform = `translate(${clientX-rect.left -400}px ,${clientY-rect.top-400}px )`;
+        //item.style.setProperty("--mouse-x", `${clientX-rect.left}px`);
+        //item.style.setProperty("--mouse-y", `${clientY-rect.top}px`);
     });
 });
 window.addEventListener('mousedown', (e)=>{
