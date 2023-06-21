@@ -28,6 +28,9 @@
         mask-image:url("../img/arrow-up.svg");
         mask-size: cover;
     }
+    @media (max-width: 1000px){
+        display: none;
+    }
 }
 .cursor-circle{
     backdrop-filter: blur(1px);
@@ -41,6 +44,9 @@
     width:24px; 
     height:24px;
     transform: translate(-50%,-50%);
+    @media (max-width: 1000px){
+        display: none;
+    }
 }
 @keyframes grain {
     0%, 100% {

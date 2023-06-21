@@ -4,7 +4,7 @@
 */
 
 export default function fullscreenSlider(sliderClass){
-
+    const mq = window.matchMedia( "(max-width: 1000px)" );
     const sliderWrapper = document.querySelector(`.${sliderClass}`);
     const slideContainer = document.querySelector(`.${sliderClass}__container`);
     const slideCarousel = document.querySelector(`.${sliderClass}__carousel`);
@@ -16,6 +16,7 @@ export default function fullscreenSlider(sliderClass){
 
     const clone = document.querySelector(".clone");
     function closeAnim(){
+        document.body.style.overflowY = mq.matches ? "scroll" : "none";
         sliderWrapper.animate([{opacity:1},{opacity:0}], {duration:200}).onfinish=()=>{
             sliderWrapper.style.display="none";
             sliderWrapper.style.opacity=0;
@@ -31,6 +32,7 @@ export default function fullscreenSlider(sliderClass){
     let slidesCount = slides.length;
     let curSelected = 0;
     document.addEventListener("keydown",(e)=>{
+        
         if(e.key == "Escape" && sliderWrapper.style.display =="flex"){
             closeAnim();
         }
