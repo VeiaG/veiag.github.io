@@ -16,7 +16,6 @@ export default function fullscreenSlider(sliderClass){
 
     const clone = document.querySelector(".clone");
     function closeAnim(){
-        document.body.style.overflowY = mq.matches ? "scroll" : "none";
         sliderWrapper.animate([{opacity:1},{opacity:0}], {duration:200}).onfinish=()=>{
             sliderWrapper.style.display="none";
             sliderWrapper.style.opacity=0;
@@ -42,10 +41,19 @@ export default function fullscreenSlider(sliderClass){
             closeAnim();
         }
     });
-    
+    slideContainer.addEventListener('scroll',(e)=>{
+        if(!mq.matches){
+            const rect = slides[0].getBoundingClientRect();
+            curSelected = Math.round(slideContainer.scrollTop / rect.height );
+            updateSelectedSlide();
+        }
+    })
     function scrollSlider(){
-        const slideHeight = document.querySelector(`.${sliderClass}__slide`).getBoundingClientRect().height;
-        slideCarousel.style.transform = `translateY(${-curSelected*slideHeight}px)`;
+        const rect = slides[curSelected].getBoundingClientRect();
+        slideContainer.scrollTop = rect.height*curSelected;
+        updateSelectedSlide();
+    }
+    function updateSelectedSlide(){
         document.querySelectorAll(`.${sliderClass}__menu-item`).forEach((e, index) =>{
             if(index == curSelected){
                 e.classList.add(`${sliderClass}__menu-item-active`);
@@ -58,8 +66,8 @@ export default function fullscreenSlider(sliderClass){
 
     slides.forEach((slide , index) => {
         // menu creating
+        
         const slideBtn = document.createElement("div");
-        slideBtn.classList.add("l-"+slide.getAttribute("data-label"));
         slideBtn.classList.add(`${sliderClass}__menu-item`);
         slideBtn.addEventListener("click", (e)=>{
             curSelected = index;
@@ -68,45 +76,4 @@ export default function fullscreenSlider(sliderClass){
         menuWrapper.append(slideBtn);
         scrollSlider()
     });
-
-    window.addEventListener("resize",scrollSlider);
-
-    //scroll
-    let scrolledMinus=0;
-    let scrolledPlus=0;
-    sliderWrapper.addEventListener("wheel", (e)=>{
-        console.log(e.deltaY);
-        if(e.deltaY<0){
-            scrolledMinus+=e.deltaY;
-            scrolledPlus=0;
-        }
-        else{
-            scrolledPlus+=e.deltaY;
-            scrolledMinus=0;
-        }
-        if(scrolledPlus>500){
-            scrolledPlus=0;
-            if(curSelected == slidesCount-1){
-                curSelected=0;
-                scrollSlider();
-            }
-            else{
-                curSelected++;
-                scrollSlider();
-            }
-        }
-        if(scrolledMinus<-500){
-            scrolledMinus=0;
-            if(curSelected == 0){
-                curSelected=slidesCount-1;
-                scrollSlider();
-            }
-            else{
-                curSelected--;
-                scrollSlider();
-            }
-        }
-    });
-
-
 }

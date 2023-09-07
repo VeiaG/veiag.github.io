@@ -39,20 +39,22 @@ const langArr = {
     },"nw-1":{
         "ua": "Я, в якості розробника, створив цей веб-сайт для меблевої компанії NorwWood з метою надання зручного та привабливого інструменту для ознайомлення з їх послугами та портфоліо.",
         "us": "I, as a developer, have created this website for NorwWood, a furniture company, with the aim of providing a convenient and attractive tool for users to explore their services and portfolio."
-    },"nw-2":{
-        "ua": "Для забезпечення зручності користування, я також розробив форму замовлення, де відвідувачі можуть вказати свої переваги та вимоги до меблів, які вони бажають отримати. Особлива увага приділяється кожному замовленню з метою гарантувати найвищу якість та задоволення клієнтів.",
-        "us": "To ensure user convenience, I have also developed an order form where visitors can specify their preferences and requirements for the furniture they desire. Special attention is given to each order to guarantee the highest quality and customer satisfaction."
     },"ec":{
         "ua": "Energo Complex",
         "us": "Energo Complex"
     },"ec-1":{
         "ua": "Цей сайт - моя курсова робота . Сайт створений для управління базою данних , з можливістью додавання , редагування та видалення данних , та створення запитів.",
         "us": "This website is my coursework. The site is designed for database management, with features such as adding, editing, and deleting data, as well as creating queries."
-    },"ec-2":{
-        "ua": "Особливістю цієї роботи є те , що у ній я реалізував RESTful API на node.js для роботи з БД mySQL , а також реалізована система входу в аккаунт БД.",
-        "us": "One notable aspect of this project is that I implemented a RESTful API using Node.js to work with a MySQL database. Additionally, I have implemented a login system for database account access."
-    },
-    
+    },"nt-1":{
+        "ua": "Notate - це веб-додаток, розроблений на платформі React, який дозволяє користувачам легко створювати, редагувати і організовувати свої нотатки в онлайн-середовищі.",
+        "us": "TENotate is a web application developed on the React platform that allows users to easily create, edit, and organize their notes in an online environmeST"
+    },"tech":{
+        "ua":"Технології",
+        "us":"Technology"
+    },"myApps":{
+        "ua":"Мої додатки",
+        "us":"My apps"
+    }
 
 }
 export default langArr;

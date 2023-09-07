@@ -3,11 +3,14 @@ import '../css/style.scss';
 import langArr from './languages';
 import lightModeModule from './modules/lightMode';
 import fullscreenSlider from './modules/fullscreenSlides';
+
 fullscreenSlider("about-fullscreen");
 fullscreenSlider("work-fullscreen");
-fullscreenSlider("project-fullscreen");
+
+
 //screen width match
 const mq = window.matchMedia( "(max-width: 1000px)" );
+
 //language
 const allLang = ['ua','us'];
 const langButton = document.querySelector('#lang');
@@ -34,7 +37,7 @@ function changeLang(){
         location.reload();
     }
     langButton.innerHTML= lang.toUpperCase();
-    document.querySelector('title').innerHTML = langArr["unit"][lang];
+    document.querySelector('title').innerHTML = langArr["unit"][lang] === undefined ? 'Паламар Роман' : langArr["unit"][lang];
     for(let key in langArr){
         let elements = document.querySelectorAll('.l-'+key);
         
@@ -122,22 +125,10 @@ if(!mq.matches){
         else{
             cursorDot.classList.remove('active');
         }
-        /*
-            Ідея як це оптимізувати . 
-            для того щоб не викликався repaint кожен раз як ми робимо setProperty
-            Ідея така : Мати два елемента , які будуть нашими градієнтами 
-            ( хоч картинкою , але краще градієнтом)
-            Важливо щоб вони за розміром були як раз під градієнт . 
-            А далі ми будемо змінювати їх позицію через transform
-            Хоч це буде і для кожного елементу , але через використання transform
-            це буде робитись на гпу , і без перемальовування 
-        */
         click.forEach((item,index)=>{
             const rect = item.getBoundingClientRect();
             borders[index].style.transform = `translate(${clientX-rect.left -400}px ,${clientY-rect.top-400}px )`;
             foregrounds[index].style.transform = `translate(${clientX-rect.left -400}px ,${clientY-rect.top-400}px )`;
-            //item.style.setProperty("--mouse-x", `${clientX-rect.left}px`);
-            //item.style.setProperty("--mouse-y", `${clientY-rect.top}px`);
         });
     });
     window.addEventListener('mousedown', (e)=>{

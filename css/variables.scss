@@ -7,6 +7,7 @@
     --cursor-color:rgba(0, 0, 0, 0.5);
     --accent-color: #2d82cc;
     --disable-color:rgb(83, 83, 83);
+    --knob-color: rgb(119, 119, 119);
     // #146c94
     // #2c74b3
     // #0081c9
@@ -23,6 +24,7 @@
     --cursor-color :rgb(236, 236, 236);
     --accent-color:#6c9bcf;
     --disable-color:rgb(133, 133, 133);
+    --knob-color: rgb(82, 82, 82);
     // #8294c4
     // #6c9bcf
     // #93bfcf
@@ -50,6 +52,6 @@
     z-index:999;
     background: var(--bg-color);
     @media (max-width: 1000px){
-        //display:flex;
+        display:flex;
     }
 }
