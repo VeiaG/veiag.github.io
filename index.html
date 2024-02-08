@@ -2,283 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <title>Palamar Roman</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/9921e293de.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          
+    <title>Паламар Роман</title>
 </head>
 <body>
-    <div id="blob">
-        <div id="blob-image"></div>
+    <div class="wip">
+        <h1>WIP</h1>
+        <h3>Нова версія сайту в процесі розробки...</h3>
+        <button id="skipwip">Переглянути</button>
     </div>
-    <div id="blur"></div>
-    <div id="themeButton">
-        <div class="themeButton__container">
-            <div id="sun" class="theme-icon"></div>
-            <div id="moon" class="theme-icon"></div>
+    <section class="header">
+        <!-- <div class="gradient"></div> -->
+        <div class="header__wrapper">
+            <img src="./images/portrait.jpg" alt="" class="portrait">
+            <h1>Паламар Роман</h1>
+            <h3>Front-end Developer</h3>
         </div>
-    </div>
-    <div id="lang"></div>
-    <div class="content">
-        <div class="content__grid">
-            <div class="grid-row1">
-                <div class="grid-subgrid">
-                    <div data-link="about-fullscreen" class="grid-item interactable">
+    </section>
+    <section class="skills">
+        <div class="skills__wrapper">
+            <h1>МОЇ ВМІННЯ</h1>
+            <div class="skills__container">
+                <div class="skills__list">
+                    <h2>Мови</h2>
+                    <span><i class="devicon-javascript-plain"></i>JavaScript</span>
+                    <span><i class="devicon-typescript-plain"></i>TypeScript</span>
+                    <span><i class="devicon-csharp-plain"></i>C#</span>
+                    <span><i class="devicon-html5-plain"></i>HTML</span>
+                    <span><i class="devicon-css3-plain"></i>CSS</span>
+                    <span><i class="devicon-sass-original"></i>SCSS</span>
+                    <span><i class="devicon-python-plain"></i>Python</span>
+                    <span><i class="devicon-codepen-original"></i>Assembly</span>
+                </div>
+                <div class="skills__list">
+                    <h2>Інше</h2>
+                    <span><i class="devicon-react-original"></i>React</span>
+                    <span><i class="devicon-redux-original"></i>Redux</span>
+                    <span><i class="devicon-nodejs-plain"></i>Node.js</span>
+                    <span><i class="devicon-figma-plain"></i>Figma</span>
+                    <span><i class="devicon-webpack-plain"></i>Webpack</span>
+                    <span><i class="devicon-git-plain"></i>GIT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="work">
+        <div class="work__wrapper">
+            <div class="work__slide">
+                
+                <div class="work__text">
+                    <h1>Placeholder Name</h1>
+                    <p>Тестовий опис проєкту який був написаний в 20034 році романом паламаром , я даже в новинах є шо , бла , блаблабла бла бла б ла балаб лба</p>
+                    <div class="work__tags">
+                        <a href="">HTML</a>
+                        <a href="">CSS</a>
+                        <a href="">JavaScript</a>
+                        <a href="">SCSS</a>
+                        <a href="">Webpack</a>
+                        <a href="">GIT</a>
                         
-                        <div class="grid-item__content">
-                            <div class="about-wrapper">
-                                <h3 class="l-about-me">Про мене</h3>
-                                <h1 class="l-unit">Паламар Роман</h1>
-                                <h2 class="l-about-description">Junior Front-end розробник</h2>
-                            </div>
-                            
-                            <img id="portret" src="img/portret.jpg" alt="">
-                        </div>
                     </div>
-                    <div class="grid-item">
-                        <div class="grid-item__content">
-                            <div class="skills">
-                                <p class="skills__label l-mySkills">Мої вміння</p>
-                                <div class="skills__items">
-                                    <div class="skills__item">
-                                        <div class="skills__icon" ></div>
-                                        <p>HTML5</p>
-                                    </div>
-                                    <div class="skills__item">
-                                        <div class="skills__icon" ></div>
-                                        <p>CSS3</p>
-                                    </div>
-                                    <div class="skills__item">
-                                        <div class="skills__icon" ></div>
-                                        <p >JavaScript</p>
-                                    </div>
-                                    <div class="skills__item">
-                                        <div class="skills__icon" ></div>
-                                        <p >Redux</p>
-                                    </div>
-                                    <div class="skills__item">
-                                        <div class="skills__icon" ></div>
-                                        <p >React</p>
-                                    </div>
-                                    <div class="skills__item">
-                                        <div class="skills__icon" ></div>
-                                        <p>Figma</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <button>Детальніше</button>
+                    
                 </div>
-                <div data-link="work-fullscreen" class="grid-item interactable">
-                    <div class="grid-item__content">
-                        <div class="work">
-                            <div class="work__label"><div class="work__label-text l-myWork">My work</div></div>
-                            <div class="work__row">
-                                <img draggable="false" src="img/ec2.png" alt="" class="work__row-item">
-                                <img draggable="false" src="img/nw4.png" alt="" class="work__row-item">
-                                <img draggable="false" src="img/ec2.png" alt="" class="work__row-item">
-                                <img draggable="false" src="img/nw4.png" alt="" class="work__row-item">
-                            </div>
-                            <div class="work__row">
-                                <img draggable="false" src="img/ec.png" alt="" class="work__row-item">
-                                <img draggable="false" src="img/nt.png" alt="" class="work__row-item">
-                                <img draggable="false" src="img/ec.png" alt="" class="work__row-item">
-                                <img draggable="false" src="img/nt.png" alt="" class="work__row-item">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <img src="./images/placeholder.png" alt="">
+
             </div>
-            <div class="grid-row2">
-                <div class="grid-item">
-                    <div class="grid-item__content">
-                        <div class="contact">
-                            <div class="contact__label l-contact">Contact</div>
-                            
-                            <a href=" mailto:veiag.work@gmail.com"><div id="mail"></div></a>
-                            <a href=" mailto:veiag.work@gmail.com">veiag.work@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <div class="grid-item__content">
-                        <div class="apps">
-                            <div class="apps__label"><div class="apps__label-text l-myApps">My apps</div></div>
-                            <div class="apps__grid">
-                                <a href="https://notateapp.github.io/" class="apps__item">
-                                    <img src="./img/nt_icon.png">
-                                    <div class="apps__text">Notate</div>
-                                </a>
-                                <a href="https://veiag.github.io/logic-sim/" class="apps__item">
-                                    <img src="./img/ls_icon.png">
-                                    <div class="apps__text">LogicSIM</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <div class="grid-item__content">
-                        <div class="links">
-                            <a target="_blank" href="https://github.com/VeiaG"><div class="links__icon" id="i-github"></div></a>
-                            <a target="_blank" href="https://www.instagram.com/veiag/"><div class="links__icon" id="i-instagram"></div></a>
-                            <a target="_blank" href="https://www.linkedin.com/in/%D1%80%D0%BE%D0%BC%D0%B0-%D0%BF%D0%B0%D0%BB%D0%B0%D0%BC%D0%B0%D1%80-645ba9254/"><div class="links__icon" id="i-linkedin"></div></a>
-                            <a target="_blank" href="https://t.me/veiag"><div class="links__icon" id="i-telegram"></div></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </section>
+    <section class="test">
         
-        <div class="clone"></div>
-    </div>
-    </div>
-    <div class="noise"></div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-circle"></div>
-    
-    <div class="about-fullscreen">
-        <div class="about-fullscreen__container">
-            <div class="about-fullscreen__carousel">
-                <div data-label="about-me" class="about-fullscreen__slide">
-                    <div class="ab1">
-                        <div class="ab1__text l-helloAbout">Привіт! Мене звуть Паламар Роман, і я молодий та амбітний junior Front-end розробник. Мені 19 років, але вже зараз я готовий поділитися з вами своїми досягненнями та проектами, які я створив.
-                            З програмуванням я зустрівся ще в підлітковому віці, і відразу зрозумів, що це моя справжня пристрасть. Зараз я маю глибоке розуміння HTML, CSS та JavaScript
-                            Я завжди відкритий для нових викликів та навчання. Я прагну постійно вдосконалюватися і дізнаватися про нові технології та підходи до розробки. У мене є сильні комунікаційні навички, які дозволяють мені працювати у команді та спілкуватися з клієнтами для розуміння їх потреб і бажань.</div>
-                        <img id="portret" src="img/portret.jpg" alt="">
-                    </div>
-                </div>
-                <div data-label="myEdu" class="about-fullscreen__slide">
-                    <div class="ab2">
-                        <div class="ab2__text l-education-1">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="work-fullscreen">
-        <div class="work-fullscreen__container">
-            <div class="work-fullscreen__carousel">
-                <div class="work-fullscreen__slide">
-                    <div class="my-work">
-                        <h1 class="my-work__header">Norw Wood</h1>
-                        
-                        <div class="my-work__content">
-                            <div class="my-work__images">
-                                <img class="nw-image" src="/img/nw1.png" alt="" srcset="">
-                                <img class="nw-image" src="/img/nw2.png" alt="" srcset="">
-                                <video class="nw-image"  playsinline autoplay muted loop poster="/img/nw3.webm">
-                                    <source src="/img/nw3.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <video class="nw-image" playsinline autoplay muted loop poster="/img/nw5.webm">
-                                    <source src="/img/nw5.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <img class="nw-image" src="/img/nw4.png" alt="" srcset="">
-                               
-                               
-                            </div>
-                            <div class="my-work__text">
-                                <p class="l-nw-1"></p>
-                                <h2 class="hdr-link l-tech"></h2>
-                                <ul>
-                                    <li>HTML5</li>
-                                    <li>CSS3</li>
-                                    <li>Javascript</li>
-                                    <li>Figma</li>
-                                    
-
-                                </ul>
-                                <a href="https://norwwood.github.io/" class="btn-link my-work__btn">norwwood.github.io</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="work-fullscreen__slide">
-                    <div class="my-work my-work--right">
-                        <h1 class="my-work__header">Energo Complex</h1>
-                        
-                        <div class="my-work__content">
-                            <div class="my-work__images">
-                                <video class="ec-image" playsinline autoplay muted loop poster="/img/ec5.webm">
-                                    <source src="/img/ec5.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <img class="ec-image" src="/img/ec1.png" alt="" srcset="">
-                                <img class="ec-image" src="/img/ec2.png" alt="" srcset="">
-                                <img class="ec-image" src="/img/ec3.png" alt="" srcset="">
-                                <video class="ec-image" playsinline autoplay muted loop poster="/img/ec4.webm">
-                                    <source src="/img/ec4.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                               
-                            </div>
-                            <div class="my-work__text">
-                                <p class="l-ec-1"></p>
-                                <h2 class="hdr-link l-tech"></h2>
-                                <ul>
-                                    <li>HTML5</li>
-                                    <li>CSS3</li>
-                                    <li>JavaScript</li>
-                                    <li>NodeJS (RESTful API)</li>
-                                    <li>MySQL</li>
-
-
-                                </ul>
-                                <a href="https://github.com/VeiaG/energo-complex" class="btn-link">Github</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="work-fullscreen__slide">
-                    <div class="my-work">
-                        <h1 class="my-work__header">Notate</h1>
-                        
-                        <div class="my-work__content">
-                            <div class="my-work__images">
-                                <video class="nt-image" playsinline autoplay muted loop poster="/img/nt1.webm">
-                                    <source src="/img/nt1.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <video class="nt-image" playsinline autoplay muted loop poster="/img/nt2.webm">
-                                    <source src="/img/nt2.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <video class="nt-image" playsinline autoplay muted loop poster="/img/nt3.webm">
-                                    <source src="/img/nt3.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-
-                               
-                               
-                            </div>
-                            <div class="my-work__text">
-                                <p class="l-nt-1"></p>
-                                <h2 class="hdr-link l-tech"></h2>
-                                <ul>
-                                    <li>HTML5</li>
-                                    <li>CSS3</li>
-                                    <li>Javascript</li>
-                                    <li>React + Redux</li>
-                                    <li>LocalForage (IndexedDB)</li>
-                                    <li>Figma</li>
-                                    
-
-                                </ul>
-                                <a href="https://notateapp.github.io/" class="btn-link my-work__btn">notateapp.github.io</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="js/app.js"></script>
+    </section>
+    <script src="/js/app.js"></script>
 </body>
 </html>
