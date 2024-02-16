@@ -429,3 +429,111 @@ body{
         transform: translateX(calc(-50% - 8px));
     }
 }
+.footer{
+
+    &__wrapper{
+        padding:16px 0;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &:before{
+            content:'';
+            width:100%;
+            
+            position: absolute;
+            left:0;
+            top:0px;
+            height:2px;
+            opacity:0.5;
+            background:linear-gradient(to right , rgba(253, 253, 253, .2), var(--text-color) 50% , rgba(253, 253, 253, .2) );
+        }
+    }
+    h1{
+        font-weight: 200;
+        font-size:24px;
+    }
+    .social-links{
+        display: flex;
+        flex-wrap:wrap;
+        gap:16px;
+        justify-content: center;
+        align-items: center;
+        font-size:24px;
+       
+        a{
+            transition:all .3s ease-in-out;
+            &:hover{
+                color:var(--accent-color);
+                cursor: pointer;
+                scale:1.05;
+            }
+        }
+    }
+}
+.exp{
+    &__wrapper{
+        padding:32px 0 96px;
+        display: flex;
+        flex-direction: column;
+        gap:32px;
+    }
+    .section-name{
+        &:after{
+            content:'';
+            width:100%;
+            
+            position: absolute;
+            left:0;
+            bottom:-16px;
+            height:2px;
+            opacity:0.3;
+            background:linear-gradient(to right , rgba(253, 253, 253, .2), var(--text-color) 50% , rgba(253, 253, 253, .2) );
+        }
+    }
+    &__horizontal{
+        display: flex;
+        width:100%;
+        justify-content: space-between;
+        gap:32px;
+        align-items: center;
+    }
+    &__list{
+        width:50%;
+        display: flex;
+        flex-direction: column;
+        margin-inline:auto;
+        gap:32px;
+        h1{
+            font-size:32px;
+            position: relative;
+            &::before{
+                @include accentLine();
+            }
+        }
+        h2{
+            font-size:24px;
+            font-weight: 300;
+        }
+        h3{
+            font-weight: 200;
+            font-size: 16px;
+        }
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap:8px;
+        position: relative;
+        &:after{
+            content:'';
+            width:100%;
+            
+            position: absolute;
+            left:0;
+            bottom:-16px;
+            height:2px;
+            opacity:0.1;
+            background:linear-gradient(to right , rgba(253, 253, 253, .2), var(--text-color) 50% , rgba(253, 253, 253, .2) );
+        }
+    }
+}
