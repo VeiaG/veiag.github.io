@@ -85,38 +85,12 @@ button,a.btn{
     }
 }
 
-.wip{
-    display: none;
-    // display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width:100vw;
-    height:100dvh;
-    position: fixed;
-    top:0;
-    left:0;
-    background:rgba(var(--background-100-rgb), 0.65);
-    z-index:999;
-    opacity:1;
-    backdrop-filter: blur(12px);
-    h1{
-        margin-top:32px;
-        font-size: 64px;
-        font-weight: 700;
-    }
-    h3{
-        font-size: 32px;
-        font-weight: 200;
-        position: relative;
-        &::before{
-            @include gradientUnderline();
-        }
-    }
-
-}
 
 
+html, body {
+    position:relative;
+    overflow-x:hidden;
+  }
 body{
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -325,6 +299,9 @@ body{
         h1{
             font-size:64px;
             position: relative;
+            @media (max-width: 768px){
+                font-size:48px;
+             }
             &::before{
                 @include accentLine();
             }
@@ -461,6 +438,11 @@ body{
         display: flex;
         justify-content: space-between;
         position: relative;
+        @media (max-width: 768px){
+            flex-direction: column;
+            align-items: center;
+            gap:16px;
+        }
         &:before{
             content:'';
             width:100%;
@@ -484,7 +466,7 @@ body{
         justify-content: center;
         align-items: center;
         font-size:24px;
-       
+        
         a{
             transition:all .3s ease-in-out;
             &:hover{
@@ -571,6 +553,9 @@ body{
 .about{
     &__wrapper{
         padding-top:96px;
+        @media (max-width: 768px){
+            padding-top:64px;
+         }
         padding-bottom: 96px;
         display: flex;
         gap:32px;
@@ -597,6 +582,9 @@ body{
         h1{
             position: relative;
             font-size:96px;
+            @media (max-width: 768px){
+               font-size:48px;
+            }
             &::before{
                 @include accentLine();
                 
@@ -632,6 +620,10 @@ body{
     }
 }
 .rnd{
+    @media (max-width: 1024px){
+        display: none;
+
+    }
     overflow: hidden;
     width:100%;
     position: absolute;

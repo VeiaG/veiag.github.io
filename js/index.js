@@ -13,7 +13,7 @@ document.querySelectorAll('.work__slide').forEach((slide) => {
       start: "-25% 50%", 
       end: "center 50%", 
       scrub: 1,
-      markers: true,
+      // markers: true,
     },
   });
   
@@ -39,7 +39,7 @@ document.querySelectorAll('.work__slide').forEach((slide) => {
 //fade in
 document.querySelectorAll('[data-fade]').forEach((el) => {
   gsap.fromTo(el, 
-    { opacity: 0, y: 50 }, // Початкові значення анімації
+    { opacity: 0, y: 50 }, 
     {
       opacity: 1,
       y: 0,
@@ -48,19 +48,13 @@ document.querySelectorAll('[data-fade]').forEach((el) => {
         start: "top 80%",
         end: "center 80%",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     }
   );
 });
 
 
-// WIP Logic
-const wipButton = document.querySelector("#skipwip");
-const wipContainer = document.querySelector(".wip");
-wipButton.addEventListener("click",()=>{
-  wipContainer.style.display ="none";
-})
 
 
 
@@ -68,6 +62,10 @@ wipButton.addEventListener("click",()=>{
 const rnd = document.querySelector(".rnd");
 const {width, height} = rnd.getBoundingClientRect();
 const rndCircle = document.querySelectorAll(".rnd-blob");
+let mq = window.matchMedia("(max-width: 1024px)");
+window.addEventListener("resize",()=>{
+  mq = window.matchMedia("(max-width: 1024px)");
+})
 const radius = 520;
 //get random color should return most bright colors
 const getRandomColor = ()=>{
@@ -89,13 +87,18 @@ const moveRandomCircle = (circle)=>{
     easing: "ease-in-out",
     fill: "both"
   });
-  setTimeout(moveRandomCircle,Math.random()*4000+2000,circle)
+  if(!mq.matches){
+    setTimeout(moveRandomCircle,Math.random()*4000+2000,circle)
+  }
+  
 
 }
+if(!mq.matches){
+  rndCircle.forEach((circle)=>{
+    setRandomPosition(circle);
+    moveRandomCircle(circle);
+  })
+}
 
-rndCircle.forEach((circle)=>{
-  // setRandomPosition(circle);
-  // moveRandomCircle(circle);
-})
 
 
