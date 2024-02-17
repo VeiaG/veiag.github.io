@@ -3,12 +3,13 @@
     box-sizing: border-box;
 }
 [class*='__wrapper']{
-  
+    width:100%;
     max-width:1400px;
     height:100%;
     margin-inline: auto;
     position: relative;
-    padding:0 16px;
+    padding-left:32px;
+    padding-right:32px;
 }
 h1,h2,h3,h4,h5,h6,p{
     margin: 0;

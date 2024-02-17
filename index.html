@@ -70,7 +70,7 @@
                         <a href="">GIT</a>
                         
                     </div>
-                    <button>Детальніше</button>
+                    <a class="btn">Детальніше</a>
                     
                 </div>
                 <img src="./images/placeholder.png" alt="">
@@ -89,7 +89,45 @@
                         <a href="">GIT</a>
                         
                     </div>
-                    <button>Детальніше</button>
+                    <a class="btn">Детальніше</a>
+                    
+                </div>
+                <img src="./images/placeholder.png" alt="">
+
+            </div>
+            <div class="work__slide">
+                <div class="work__text">
+                    <h1>Placeholder Name</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci repellendus ea, impedit quis reprehenderit eius amet qui officia nemo quia in ratione odit praesentium assumenda, sit animi delectus ducimus quae.</p>
+                    <div class="work__tags">
+                        <a href="">HTML</a>
+                        <a href="">CSS</a>
+                        <a href="">JavaScript</a>
+                        <a href="">SCSS</a>
+                        <a href="">Webpack</a>
+                        <a href="">GIT</a>
+                        
+                    </div>
+                    <a class="btn">Детальніше</a>
+                    
+                </div>
+                <img src="./images/placeholder.png" alt="">
+
+            </div>
+            <div class="work__slide work__slide--right">
+                <div class="work__text">
+                    <h1>Placeholder Name</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque enim vitae laboriosam quam, rerum provident, eius cum accusantium saepe, commodi aliquid vero molestias voluptas nulla dolores culpa dignissimos quibusdam! Nisi.</p>
+                    <div class="work__tags">
+                        <a href="">HTML</a>
+                        <a href="">CSS</a>
+                        <a href="">JavaScript</a>
+                        <a href="">SCSS</a>
+                        <a href="">Webpack</a>
+                        <a href="">GIT</a>
+                        
+                    </div>
+                    <a class="btn">Детальніше</a>
                     
                 </div>
                 <img src="./images/placeholder.png" alt="">
@@ -99,7 +137,7 @@
     </section>
     <section class="more">
         
-        <div class="more__wrapper">
+        <div  data-fade class="more__wrapper">
             <h1>Ще 15+ проектів</h1>
             <div class="more__slider">
                 <div class="more-slider">
@@ -124,31 +162,47 @@
     </section>
     <section class="exp">
         <div class="exp__wrapper">
-            <h1 class="section-name">Мій досвід роботи</h1>
+            <h1  data-fade class="section-name">Мій досвід роботи</h1>
             <div class="exp__list">
-                <div class="exp__item">
+                <div data-fade class="exp__item">
                     <div class="exp__horizontal">
                         <h1>Norw Wood</h1>
                         <p>Київ , Україна <i class="fa-solid fa-location-dot"></i></p>
                     </div>
                     <div class="exp__horizontal">
-                        <h2>Front-end Developer</h2>
-                        <h3>June 2023 – August 2023</h3>
+                        <h2>Front-end Розробник</h2>
+                        <h3>Червень 2023 - Серпень 2023</h3>
                     </div>
-                    <p>I created a desktop program in C# to facilitate the creation of tables with a list of parts for furniture using a modular system. Later, I reworked the program as a PWA in React, preserving the functionality and improving the visuals</p>
+                    <p>Я створив десктопну програму на C# для полегшення створення таблиць з переліком деталей для меблів за допомогою модульної системи. Пізніше я переробив програму як PWA на React, зберігши функціональність та покращивши візуальну складову.</p>
                 </div>
-                <div class="exp__item">
+                <div data-fade class="exp__item">
                     <div class="exp__horizontal">
-                        <h1>ECOTM</h1>
+                        <h1>ЕКОТМ</h1>
                         <p>Київ , Україна <i class="fa-solid fa-location-dot"></i></p>
                     </div>
                     <div class="exp__horizontal">
-                        <h2>Front-end Developer</h2>
-                        <h3>October 2023 – January 2024</h3>
+                        <h2>Front-end Розробник</h2>
+                        <h3>Жовтень 2023 - Січень 2024</h3>
                     </div>
-                    <p>Designed and developed the landing page for ECOTM. </p>
+                    <p>Створив дизайн та розробив лендінг для ЕКОТМ. Створено сучасний, елегантний лендінг з акцентом на екологічність, чіткою структурою, переконливим контентом та чітким закликом до дії.</p>
                 </div>
             </div>
+        </div>
+    </section>
+    <section data-fade class="about">
+        <div class="about__wrapper">
+            <div class="about__text">
+            <h1>Про мене</h1>
+            <p>Привіт! Я Роман, 20 років. Моє велике захоплення - розробка веб-сайтів та веб-додатків. </p>
+            <p>Навчаюсь в Києві ,на 3 курсі, спеціальність "Комп'ютерні науки" .</p>
+            <p>Швидко та старанно навчаюсь новим технологіям та мовам програмування.</p>
+            <p>Відкритий до нових знань та досвіду.</p>
+
+            <a class="btn" href="">Зв'язатися</a>
+
+
+            </div>
+            <img src="./images/coolGuy.png" alt="">
         </div>
     </section>
     <footer class="footer">
@@ -164,7 +218,34 @@
             </div>
         </div>
     </footer>
-
+    <div class="rnd">
+        <svg viewBox="0 0 256 256" class="svg gooey">
+            <defs>
+              <filter id="filter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -14" result="filter" />
+                <feComposite in="SourceGraphic" in2="filter" operator="atop" />
+              </filter>
+            </defs>
+        </svg>
+        <div class="rnd-blob" style="transform: translate(1561.37px, 2865.78px) scale(1.4779); background: rgb(79, 12, 14);"></div>
+        <div class="rnd-blob" style="transform: translate(467.121px, 3279.74px) scale(1.39477); background: rgb(89, 217, 204);"></div>
+        <div class="rnd-blob" style="transform: translate(394.105px, 2465.74px) scale(1.17225); background: rgb(109, 232, 17);"></div>
+        <div class="rnd-blob" style="transform: translate(1425.85px, 5220.84px) scale(1.05525); background: rgb(111, 50, 4);"></div>
+        <div class="rnd-blob" style="transform: translate(1718.68px, 2288.72px) scale(1.25385); background: rgb(45, 163, 113);"></div>
+        <div class="rnd-blob" style="transform: translate(195.341px, 2388.65px) scale(1.12128); background: rgb(166, 220, 148);"></div>
+        <div class="rnd-blob" style="transform: translate(963.65px, 5264.86px) scale(1.10541); background: rgb(36, 135, 181);"></div>
+        <div class="rnd-blob" style="transform: translate(1018.29px, 975.473px) scale(1.39003); background: rgb(201, 120, 16);"></div>
+        <div class="rnd-blob" style="transform: translate(1010.58px, 1653.68px) scale(1.04003); background: rgb(167, 197, 114);"></div>
+        <div class="rnd-blob" style="transform: translate(779.954px, 1143.78px) scale(1.22662); background: rgb(210, 75, 101);"></div>
+        <div class="rnd-blob" style="transform: translate(612.95px, 4585.85px) scale(1.36217); background: rgb(225, 191, 90);"></div>
+        <div class="rnd-blob" style="transform: translate(1554.26px, 79.403px) scale(1.32509); background: rgb(188, 85, 140);"></div>
+        <div class="rnd-blob" style="transform: translate(1190.2px, 2913.99px) scale(1.45795); background: rgb(165, 185, 80);"></div>
+        <div class="rnd-blob" style="transform: translate(1014.61px, 1001.21px) scale(1.18569); background: rgb(221, 90, 41);"></div>
+        <div class="rnd-blob" style="transform: translate(452.108px, 4007.05px) scale(1.33568); background: rgb(200, 21, 79);"></div>
+        <div class="rnd-blob" style="transform: translate(1497.63px, 4934.84px) scale(1.07092); background: rgb(48, 43, 249);"></div>
+        
+    </div>
     <script src="/js/app.js"></script>
 </body>
 </html>

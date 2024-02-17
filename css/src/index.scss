@@ -60,7 +60,7 @@
 
 button,a.btn{
     // display: none;
-    
+    text-align: center;
     font-size:32px;
     min-width: 256px;
     padding:8px 16px;
@@ -68,7 +68,7 @@ button,a.btn{
     background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     background-size:200%;
     background-position: 100%;
-
+    user-select: none;
     color:var(--text-color);
     border:none;
     //border:2px solid var(--text-color);
@@ -181,6 +181,7 @@ body{
         margin-top:32px;
         font-size: 64px;
         font-weight: 700;
+        text-align: center;
     }
     h3{
         font-size: 32px;
@@ -195,7 +196,8 @@ body{
     position: relative;
     @include frontPanel();
     &__wrapper{
-        padding:32px 0px;
+        padding-top:32px;
+        padding-bottom: 32px;
         display: flex;
         flex-direction: column;
         gap:32px;
@@ -224,6 +226,9 @@ body{
         gap:16px;
         column-gap: 64px;
         font-size:32px;
+        @media (max-width: 768px){
+            font-size:24px;
+        }
         span{
             display: flex;
             gap:16px;
@@ -269,10 +274,14 @@ body{
     text-align: center;
     position: relative;
     margin-inline:auto;
+    @media (max-width: 768px){
+        font-size:48px;
+     }
 }
 .work{
     &__wrapper{
-        padding:128px 0;
+        padding-top:128px;
+        padding-bottom: 128px;
         position: relative;
         display: grid;
         grid-template-columns: 1fr;
@@ -287,11 +296,19 @@ body{
         gap:128px;
         
         img{
-            width:50%;
+            width:45%;
             border-radius: 32px;
+            object-fit: cover;
         }
         &--right{
             flex-direction: row-reverse;
+        }
+        @media (max-width: 768px){
+            flex-direction: column-reverse;
+            align-items: center;
+            img{
+                width:90%;
+            }
         }
         
     }
@@ -302,6 +319,9 @@ body{
         align-items: flex-start;
         justify-content: center;
         gap:16px;
+        @media (max-width: 768px){
+            width:90%;
+        }
         h1{
             font-size:64px;
             position: relative;
@@ -312,9 +332,12 @@ body{
         p{
             font-size:24px;
         }
-        button{
+        .btn{
             align-self: flex-end;
             margin-top:32px;
+            @media (max-width: 768px){
+               align-self: center;
+            }
         }
     }
     &__tags{
@@ -345,7 +368,8 @@ body{
     @include frontPanel();
     position: relative;
     
-    padding:64px 0px;
+    padding-top:64px;
+    padding-bottom: 64px;
     min-width: 0;
     display: flex;
     justify-content: center;
@@ -355,9 +379,6 @@ body{
     &::after{
         @include grid();
 
-        // background:red;
-        // opacity:1;
-        // mask-image:none;
 
         width:100%;
         height:300%;
@@ -366,6 +387,7 @@ body{
 
     }
     &__wrapper{
+        
         z-index:2;
         display: flex;
         flex-direction: column;
@@ -377,6 +399,9 @@ body{
             font-size: 64px;
             font-weight: 700;
             position: relative;
+            @media (max-width: 768px){
+               font-size:48px;
+            }
             &::before{
                 @include gradientUnderline();
                 height:16px;
@@ -387,6 +412,7 @@ body{
         align-self:flex-start;
         overflow: hidden;
         width:100%;
+        
         mask-image:linear-gradient(to right , transparent, white 20% 80% , transparent);
     }
     .more-slider{
@@ -417,9 +443,7 @@ body{
     }
     
 }
-.test{
-    padding:512px
-}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -430,9 +454,10 @@ body{
     }
 }
 .footer{
-
+    
     &__wrapper{
-        padding:16px 0;
+        padding-top:16px;
+        padding-bottom: 16px;
         display: flex;
         justify-content: space-between;
         position: relative;
@@ -471,8 +496,10 @@ body{
     }
 }
 .exp{
+    
     &__wrapper{
-        padding:32px 0 96px;
+        padding-top:32px;
+        padding-bottom: 96px;
         display: flex;
         flex-direction: column;
         gap:32px;
@@ -499,6 +526,9 @@ body{
     }
     &__list{
         width:50%;
+        @media (max-width: 768px){
+            width:90%;
+         }
         display: flex;
         flex-direction: column;
         margin-inline:auto;
@@ -535,5 +565,90 @@ body{
             opacity:0.1;
             background:linear-gradient(to right , rgba(253, 253, 253, .2), var(--text-color) 50% , rgba(253, 253, 253, .2) );
         }
+    }
+}
+
+.about{
+    &__wrapper{
+        padding-top:96px;
+        padding-bottom: 96px;
+        display: flex;
+        gap:32px;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        @media (max-width: 768px){
+            justify-content: center;
+         }
+    }
+    &__text{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width:50%;
+        @media (max-width: 768px){
+            width:90%;
+            text-align: center;
+            align-items: center;
+         }
+        position: relative;
+        
+        h1{
+            position: relative;
+            font-size:96px;
+            &::before{
+                @include accentLine();
+                
+            }
+        }   
+        p{
+            font-size:24px;
+            font-weight: 300;
+            margin-top:8px;
+            // margin-left:16px;
+            // text-indent: 16px;
+        }
+        .btn{
+            margin-top:32px;
+            align-self:flex-end;
+            @media (max-width: 768px){
+                align-self: auto;
+             }
+        }
+    }   
+    img{
+        width:50%;
+        aspect-ratio: 1;
+        object-fit: contain;
+        position: absolute;
+        right:0;
+        bottom:0;
+        user-select: none;
+        pointer-events: none;
+        @media (max-width: 768px){
+            display: none;
+         }
+    }
+}
+.rnd{
+    overflow: hidden;
+    width:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    height:100%;
+    filter: url('#filter') blur(64px) ;
+    z-index: -1;
+    opacity:0.15;
+    .rnd-blob{
+        width:512px;
+        height:512px;
+        position: absolute;
+        top:0;
+        left:0;
+        background:white;
+        border-radius: 50%;
+        filter:blur(64px);
     }
 }
