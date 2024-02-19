@@ -266,7 +266,7 @@ body{
     &__slide{
         width:100%;
         display:flex;
-        grid-template-columns: 1fr 1fr;
+        // grid-template-columns: 1fr 1fr;
         gap:128px;
         
         img{
@@ -336,6 +336,12 @@ body{
                 color:var(--accent-color);
                 border-color: var(--accent-color);
                 scale:1.02;
+            }
+            user-select: none;
+            position: relative;
+            overflow: hidden;
+            &:before{
+                @include noiseOverlay();
             }
         }
     }
