@@ -81,14 +81,14 @@ const moveRandomCircle = (circle)=>{
     {transform: `translate(${Math.random()*(width)}px,${Math.random()*(height-radius)}px) scale(${Math.random()*0.5+1}) `},
   ]
   circle.animate(keyframes,{
-    duration: Math.random()*5000+3000,
+    duration: Math.random()*10000+5000,
     iterations: Infinity,
     direction: "alternate",
     easing: "ease-in-out",
     fill: "both"
   });
   if(!mq.matches){
-    setTimeout(moveRandomCircle,Math.random()*4000+2000,circle)
+    setTimeout(moveRandomCircle,Math.random()*9000+8000,circle)
   }
   
 
@@ -96,7 +96,7 @@ const moveRandomCircle = (circle)=>{
 if(!mq.matches){
   rndCircle.forEach((circle)=>{
     setRandomPosition(circle);
-    moveRandomCircle(circle);
+    // moveRandomCircle(circle);
   })
 }
 
