@@ -2,7 +2,7 @@
 @mixin grid(){
     content:'';
     display: block;
-    background:url(../../images/noise.png) repeat,url(../../images/grid.png);
+    background:url(./assets/noise.png) repeat,url(./assets/grid.png);
     background-size: 512px;
     position: absolute;
     
@@ -19,7 +19,7 @@
     height:$height;
     top:0;
     left:0;
-    background:url(../../images/noise.png) repeat;
+    background:url(./assets/noise.png) repeat;
     mix-blend-mode: overlay;
     z-index:0;
     user-select: none;
@@ -106,7 +106,7 @@ body{
     color:var(--text-color);
     position: relative;
     background:var(--background-50);
-    // background:url(../../images/noise.png) repeat,var(--background-50);
+    // background:url(./assets/noise.png) repeat,var(--background-50);
     // background-blend-mode: overlay;
 
     &::before{
@@ -126,7 +126,7 @@ body{
         left:0;
     }
     .gradient{
-        background:url(../../images/noise.png) repeat,linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        background:url(./assets/noise.png) repeat,linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
         width:50%;
         aspect-ratio: 1;
         position: absolute;

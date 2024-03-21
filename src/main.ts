@@ -1,4 +1,4 @@
-import '../css/src/index.scss';
+import './style.scss';
 
 import { gsap } from "gsap";
     
@@ -60,8 +60,8 @@ document.querySelectorAll('[data-fade]').forEach((el) => {
 
 
 const rnd = document.querySelector(".rnd");
-const {width, height} = rnd.getBoundingClientRect();
-const rndCircle = document.querySelectorAll(".rnd-blob");
+const {width, height} = rnd?.getBoundingClientRect() || {width: 0, height: 0};
+const rndCircle = document.querySelectorAll<HTMLDivElement>(".rnd-blob");
 let mq = window.matchMedia("(max-width: 1024px)");
 window.addEventListener("resize",()=>{
   mq = window.matchMedia("(max-width: 1024px)");
@@ -71,11 +71,11 @@ const radius = 520;
 const getRandomColor = ()=>{
   return `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
 }
-const setRandomPosition = (circle)=>{
+const setRandomPosition = (circle:HTMLDivElement)=>{
   circle.style.transform = `translate(${Math.random()*(width)}px,${Math.random()*(height-radius)}px) scale(${Math.random()*0.5+1}) `;
   circle.style.background = getRandomColor();
 }
-const moveRandomCircle = (circle)=>{
+const moveRandomCircle = (circle:HTMLDivElement)=>{
   
   const keyframes = [
     {transform: `translate(${Math.random()*(width)}px,${Math.random()*(height-radius)}px) scale(${Math.random()*0.5+1}) `},
